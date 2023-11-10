@@ -12,6 +12,14 @@ spans.forEach(function(span) {
 
         result.innerHTML = this.innerHTML;
     });
+    span.addEventListener('touchstart', function() {
+        spans.forEach(function(s) {
+            s.classList.remove('selected');
+        })
+        this.classList.add('selected');
+
+        result.innerHTML = this.innerHTML;
+    });
 });
 
 document.getElementById('submit').addEventListener('click', function() {
